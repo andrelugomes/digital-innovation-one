@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+}
+
+group 'one.innovation.digital'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

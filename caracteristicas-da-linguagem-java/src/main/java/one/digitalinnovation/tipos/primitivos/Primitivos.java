@@ -27,7 +27,7 @@ public class Primitivos {
         //int i3 = -2147483649; //to large
 
 
-        long l = 9223372036854775807L;      //64 bits
+        long l = 9223372036854775807l;      //64 bits
         long l2 = -9223372036854775808L;
         //long l3 = 9223372036854775808L;   //to large
 

@@ -4,11 +4,11 @@ public class Programa {
 
     public static void main(String[] args) {
 
-        final Gol gol = new Gol();
+        final Carro gol = new Gol();
         System.out.println("Marca do Gol : "+gol.marca());
         gol.ligar();
 
-        final Trator trator = new Trator();
+        final Veiculo trator = new Trator();
         System.out.println("Registro do Trator :"+trator.registro());
         trator.ligar();
 

@@ -7,7 +7,7 @@ public class CasualGamer extends Gamer {
         return "Simple keyboard...";
     }
 
-    /*@Override
+   /* @Override
     public String mouse() {
         return super.mouse();
     }*/

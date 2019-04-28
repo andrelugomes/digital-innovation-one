@@ -12,10 +12,12 @@ public class SuperUsuario {
     }
 
     public String getLogin() {
+
         return login;
     }
 
     protected String getSenha() {
+
         return senha;
     }
 
