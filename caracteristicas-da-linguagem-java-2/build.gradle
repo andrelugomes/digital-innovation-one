@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'checkstyle'
+    id 'pmd'
 }
 
 group 'one.digitalinnovation'
@@ -13,4 +15,18 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+checkstyle {
+    toolVersion = '8.21'
+    showViolations = true
+    configFile = file("config/checkstyle/checkstyle.xml")
+}
+
+pmd {
+    //ruleSets = ["category/java/errorprone.xml", "category/java/bestpractices.xml"]
+    ruleSetFiles = files("config/pmd/ruleset.xml")
+    toolVersion = '6.15.0'
+    ignoreFailures = true
+    consoleOutput = true
 }
