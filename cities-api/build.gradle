@@ -1,0 +1,42 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.6.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+	id 'pmd'
+	id 'checkstyle'
+}
+
+group = 'com.github.andrelugomes'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.vladmihalcea:hibernate-types-52:2.9.8'
+	runtimeOnly 'org.postgresql:postgresql'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
+
+pmd {
+	consoleOutput = true
+	toolVersion = "6.21.0"
+	rulePriority = 5
+	//ruleSetFiles = files("pmd-ruleset.xml")
+	ruleSets = ["category/java/bestpractices.xml"]
+}
+
+checkstyle {
+	toolVersion "8.31"
+	configFile file("google_checks.xml")
+}
