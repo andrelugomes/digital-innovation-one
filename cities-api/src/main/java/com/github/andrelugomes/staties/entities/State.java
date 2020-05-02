@@ -32,9 +32,11 @@ public class State {
 
   private Integer ibge;
 
-
-  /*@Column(name = "pais")
+  /* 1st
+  @Column(name = "pais")
   private Integer countryId;*/
+
+  // 2nd - @ManyToOne
   @ManyToOne
   @JoinColumn(name = "pais", referencedColumnName = "id")
   private Country country;

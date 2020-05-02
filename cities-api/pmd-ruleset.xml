@@ -10,7 +10,9 @@
     </description>
 
     <!-- Your rules will come here -->
-    <rule ref="category/java/bestpractices.xml" />
+    <rule ref="category/java/bestpractices.xml">
+        <exclude name="JUnitAssertionsShouldIncludeMessage"/>
+    </rule>
 
     <rule ref="category/java/security.xml" />
 

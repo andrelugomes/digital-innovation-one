@@ -20,6 +20,7 @@ public class Country {
 
   @Column(name = "sigla")
   private String code;
+
   private Integer bacen;
 
   public Country() {

@@ -18,15 +18,15 @@ public class CityResource {
     this.repository = repository;
   }
 
-  /*@GetMapping
+  /* 1st
+  @GetMapping
   public List<City> cities() {
-
       return repository.findAll();
   }*/
 
+  // 2nd - Pageable
   @GetMapping
   public Page<City> cities(final Pageable page) {
-
     return repository.findAll(page);
   }
 }
