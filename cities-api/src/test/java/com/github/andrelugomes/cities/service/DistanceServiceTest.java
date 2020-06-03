@@ -63,7 +63,6 @@ class DistanceServiceTest {
     assertThat(distance).isCloseTo(7.71, offset(0.01d));
   }
 
-
   @Test
   public void shouldCalculateInMetersUsingPoints() {
     given(cityRepository.findAllById(anyList())).willReturn(Arrays.asList(ibate, saoCarlos));

@@ -1,6 +1,8 @@
 package com.github.andrelugomes.utils;
 
-import org.assertj.core.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
+
+
 import org.junit.jupiter.api.Test;
 
 class StringLocationUtilsTest {
@@ -11,7 +13,7 @@ class StringLocationUtilsTest {
 
     Double[] transform = StringLocationUtils.transform(geoLocation);
 
-    Assertions.assertThat(transform[0]).isEqualTo(123.0);
-    Assertions.assertThat(transform[1]).isEqualTo(321.0);
+    assertEquals(123.0, transform[0], "Not equal");
+    assertEquals(321, transform[1], "Not equal");
   }
 }

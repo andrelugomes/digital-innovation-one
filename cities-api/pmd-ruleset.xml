@@ -12,6 +12,7 @@
     <!-- Your rules will come here -->
     <rule ref="category/java/bestpractices.xml">
         <exclude name="JUnitAssertionsShouldIncludeMessage"/>
+        <exclude name="JUnitTestContainsTooManyAsserts"/>
     </rule>
 
     <rule ref="category/java/security.xml" />
@@ -21,13 +22,13 @@
         <exclude name="BeanMembersShouldSerialize"/>
     </rule>
 
-    <rule ref="category/java/performance.xml"/>
+    <!--<rule ref="category/java/performance.xml"/>-->
 
-    <rule ref="category/java/codestyle.xml"/>
+    <!--<rule ref="category/java/codestyle.xml"/>-->
 
     <rule ref="category/java/codestyle.xml/ShortVariable">
         <properties>
-            <property name="minimum" value="2" />
+            <property name="minimum" value="1" />
         </properties>
     </rule>
     <rule ref="category/java/codestyle.xml/ShortClassName">

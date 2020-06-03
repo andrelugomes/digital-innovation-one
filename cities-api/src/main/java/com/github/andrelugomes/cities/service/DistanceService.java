@@ -15,7 +15,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.geo.Point;
-import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -97,7 +96,8 @@ public class DistanceService {
                                final double lng2, final EarthRadius earthRadius) {
     double lat = toRadians(lat2 - lat1);
     double lon = toRadians(lng2 - lon1);
-    double a = sin(lat / 2) * sin(lat / 2) + cos(toRadians(lat1)) * cos(toRadians(lat2)) * sin(lon / 2) * sin(lon / 2);
+    double a = sin(lat / 2) * sin(lat / 2) +
+        cos(toRadians(lat1)) * cos(toRadians(lat2)) * sin(lon / 2) * sin(lon / 2);
     double c = 2 * atan2(sqrt(a), sqrt(1 - a));
 
     return earthRadius.getValue() * c;

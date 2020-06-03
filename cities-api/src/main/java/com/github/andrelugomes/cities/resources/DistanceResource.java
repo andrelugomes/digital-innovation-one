@@ -13,9 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/distances")
 public class DistanceResource {
 
-  Logger log = LoggerFactory.getLogger(DistanceResource.class);
-
   private final DistanceService service;
+  Logger log = LoggerFactory.getLogger(DistanceResource.class);
 
   public DistanceResource(DistanceService service) {
     this.service = service;
@@ -37,8 +36,8 @@ public class DistanceResource {
 
   @GetMapping("/by-math")
   public Double byMath(@RequestParam(name = "from") final Long city1,
-                                @RequestParam(name = "to") final Long city2,
-                                @RequestParam final EarthRadius unit) {
+                       @RequestParam(name = "to") final Long city2,
+                       @RequestParam final EarthRadius unit) {
     log.info("byMath");
     return service.distanceUsingMath(city1, city2, unit);
   }
