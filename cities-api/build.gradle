@@ -1,9 +1,7 @@
 plugins {
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'org.springframework.boot' version '2.2.6.RELEASE'
-	id 'checkstyle'
 	id 'java'
-	id 'pmd'
 }
 
 group = 'com.github.andrelugomes'
@@ -29,18 +27,4 @@ dependencies {
 
 test {
 	useJUnitPlatform()
-}
-
-pmd {
-	consoleOutput = true
-	toolVersion = "6.21.0"
-	rulePriority = 5
-	ruleSetFiles = files("pmd-ruleset.xml")
-	ruleSets = []
-	//ruleSets = ["category/java/bestpractices.xml"]
-}
-
-checkstyle {
-	toolVersion "8.31"
-	configFile file("google_checks.xml")
 }
