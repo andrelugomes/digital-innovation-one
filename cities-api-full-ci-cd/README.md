@@ -20,25 +20,6 @@
 docker run --name cities-db -d -p 5432:5432 -e POSTGRES_USER=postgres_user_city -e POSTGRES_PASSWORD=super_password -e POSTGRES_DB=cities postgres
 ```
 
-### Populate
-
-* [data](https://github.com/chinnonsantos/sql-paises-estados-cidades/tree/master/PostgreSQL)
-
-```shell script
-cd ~/workspace/sql-paises-estados-cidades/PostgreSQL
-
-docker run -it --rm --net=host -v $PWD:/tmp postgres /bin/bash
-
-psql -h localhost -U postgres_user_city cities -f /tmp/pais.sql
-psql -h localhost -U postgres_user_city cities -f /tmp/estado.sql
-psql -h localhost -U postgres_user_city cities -f /tmp/cidade.sql
-
-psql -h localhost -U postgres_user_city cities
-
-CREATE EXTENSION cube; 
-CREATE EXTENSION earthdistance;
-```
-
 * [Postgres Earth distance](https://www.postgresql.org/docs/current/earthdistance.html)
 * [earthdistance--1.0--1.1.sql](https://github.com/postgres/postgres/blob/master/contrib/earthdistance/earthdistance--1.0--1.1.sql)
 * [OPERATOR <@>](https://github.com/postgres/postgres/blob/master/contrib/earthdistance/earthdistance--1.1.sql)
@@ -127,16 +108,6 @@ wget https://raw.githubusercontent.com/checkstyle/checkstyle/master/src/main/res
 ## Migrations
 
 + https://flywaydb.org/
-
-New Data base
-```shell script
-docker run --name dio-cities-db-2 -d -p 5432:5432 -e POSTGRES_USER=postgres_user_city -e POSTGRES_PASSWORD=super_password -e POSTGRES_DB=cities postgres
-```
-```shell script
-cp ~/workspace/sql-paises-estados-cidades/PostgreSQL/pais.sql  src/main/resources/db/migration/V1__create_paises.sql  
-cp ~/workspace/sql-paises-estados-cidades/PostgreSQL/estado.sql src/main/resources/db/migration/V2__create_estados.sql  
-cp ~/workspace/sql-paises-estados-cidades/PostgreSQL/cidade.sql src/main/resources/db/migration/V3__create_cidades.sql
-```
 
 ## CI
 
