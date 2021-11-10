@@ -7,7 +7,7 @@ public class Logicos {
     final var numero = 2;
     final var letra = "A";
 
-    //Sort Circuit
+    //Short Circuit
     if (numero < 5 && letra.equals("A")) {
       System.out.println("Atendeu a condição");
     }
@@ -20,7 +20,7 @@ public class Logicos {
       System.out.println("Lógica maluca...");
     }
 
-    //Non Sort Circuit
+    //Non Short Circuit
     /*if (verifica(15) | verifica("A")) {
         System.out.println("OK");
     } else {
