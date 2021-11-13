@@ -28,9 +28,7 @@ cd ~/workspace/sql-paises-estados-cidades/PostgreSQL
 
 docker run -it --rm --net=host -v $PWD:/tmp postgres /bin/bash
 
-psql -h localhost -U postgres_user_city cities -f /tmp/pais.sql
-psql -h localhost -U postgres_user_city cities -f /tmp/estado.sql
-psql -h localhost -U postgres_user_city cities -f /tmp/cidade.sql
+cd tmp/ && for file in *.sql; do psql -U postgres_user_city -h localhost -p 5432 -d cities -f $file; done
 
 psql -h localhost -U postgres_user_city cities
 
