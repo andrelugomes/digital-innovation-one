@@ -102,4 +102,12 @@ public class DistanceService {
 
     return earthRadius.getValue() * c;
   }
+
+
+  public List<Object> retornaListaCidades_RaioDistancia_ByPoint(String nomeCidadeFrom, double raioDistancia) {
+    return cityRepository.retornaListaCidades_RaioDistancia_ByPoint(nomeCidadeFrom, raioDistancia);
+  }
+
+
+
 }
