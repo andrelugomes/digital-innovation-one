@@ -67,6 +67,20 @@ select earth_distance(
 ) as distance;
 ```
 
+#### Consulta de cidades próximas de outra em determinado raio de distância
+
+```roomsql
+select distinct c2.id, c2.nome, (c1.lat_lon <@> c2.lat_lon) as di
+from public.cidade c1 
+	inner join public.cidade c2
+		on (c1.lat_lon <@> c2.lat_lon) < 100
+where c1.nome ilike 'São Paulo';
+```
+
+
+
+
+
 ## Spring Boot
 
 * [https://start.spring.io/](https://start.spring.io/)
